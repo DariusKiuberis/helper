@@ -1,0 +1,14 @@
+{
+  "name": "@darius-kiuberis/helper",
+  "version": "1.0.1",
+  "description": "My helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "keywords": [
+    "helper"
+  ],
+  "author": "Darius Kiuberis",
+  "license": "ISC"
+}

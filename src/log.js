@@ -40,4 +40,5 @@ const log = (param = "", color = randomColor, comment = randomNumber) => {
   return console.log(`%c ${comment}  --->  `, `background:${color}`, param);
 };
 
-export default log;
+const _log = log;
+export { _log as log };

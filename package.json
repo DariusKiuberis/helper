@@ -1,6 +1,6 @@
 {
   "name": "@darius-kiuberis/helper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "My helper",
   "main": "index.js",
   "scripts": {

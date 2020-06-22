@@ -8,7 +8,7 @@ Use: import {log, random, type} from '@darius-kiuberis/helper'
 
 #### `log(any)`
 
-- log{anything, this, and, this} works like console.log, but on every log generates random color and serial number.
+- log(anything, this, and, this) works like console.log, but on every log generates random color and serial number.
 
 #### `random(type, val1, val2)`
 

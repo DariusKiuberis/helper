@@ -2,7 +2,6 @@
   "name": "@darius-kiuberis/helper",
   "version": "1.0.6",
   "description": "My helper",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\""

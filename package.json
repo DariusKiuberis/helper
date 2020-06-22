@@ -2,6 +2,10 @@
   "name": "@darius-kiuberis/helper",
   "version": "1.0.7",
   "description": "My helper",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DariusKiuberis/helper.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\""

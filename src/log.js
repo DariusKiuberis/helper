@@ -25,19 +25,26 @@ const colorsArray = [
   "Sienna",
   "Orange",
 ];
-// generate random number between 100 and 999, so it's always will be 3 digits number
-const randomNumber = Math.floor(Math.random() * (999 - 100 + 1)) + 100;
-const randomColor = colorsArray[Math.floor(Math.random() * colorsArray.length)];
 
 /**
- * Enhanced console.log. All params is optional
+ * Enhanced console.log
  *
- * @param {*} param {any} - put whatever you want
- * @param {*} comment {any} - write comment
- * @param {*} color {any} - add color your color
+ * @param {*} param {any} - put anything to log it
  */
-const log = (param = "", color = randomColor, comment = randomNumber) => {
-  return console.log(`%c ${comment}  --->  `, `background:${color}`, param);
+const log = (...param) => {
+  // generate random number between 100 and 999, so it's always will be 3 digits number
+  const randomNumber = Math.floor(Math.random() * (999 - 100 + 1)) + 100;
+  const randomColor =
+    colorsArray[Math.floor(Math.random() * colorsArray.length)];
+
+  console.log(
+    `%c ${randomNumber}       `,
+    `background:${randomColor}`,
+    ...param
+  );
+  console.log(
+    "......................................................................."
+  );
 };
 
 export default log;

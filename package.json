@@ -1,16 +1,20 @@
 {
   "name": "@darius-kiuberis/helper",
-  "version": "1.0.12",
+  "version": "1.0.15",
   "description": "My helpers",
+  "types": "lib",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/DariusKiuberis/helper.git"
   },
-  "main": "index.js",
+
+  "files": ["build"],
   "scripts": {
     "start": "cross-env NODE_ENV=production npm run build && node build/index.js",
     "start:dev": "cross-env NODE_ENV=development nodemon",
-    "build": "rimraf ./build && tsc",
+    "build": "tsc -p .",
+    "build:old": "rimraf ./build/* && tsc",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "prettier:format": "prettier --config .prettierrc 'src/**/*.ts' --write",
@@ -18,7 +22,9 @@
     "test": "jest --watch",
     "coverage": "jest --coverage"
   },
-  "keywords": ["helper"],
+  "keywords": [
+    "helper"
+  ],
   "author": "Darius Kiuberis",
   "license": "ISC",
   "devDependencies": {

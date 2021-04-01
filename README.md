@@ -31,6 +31,7 @@ Use: import {log, random, type} from '@darius-kiuberis/helper'
 
 
 ### Scripts overview
+v14
 
 Husky:  you can just write git commit -m "bla bla" -n
 the -n will get you bypass the hooks

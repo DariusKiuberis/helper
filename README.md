@@ -27,22 +27,39 @@ Use: import {log, random, type} from '@darius-kiuberis/helper'
 - type(any-value)<br>
   > returns correct type of passed variable.
 
-
-
-
 ### Scripts overview
-v14
 
-Husky:  you can just write git commit -m "bla bla" -n
-the -n will get you bypass the hooks
+Husky: you can just write `git commit -m "bla bla" -n` <br>
+the `-n` will get you bypass the hooks.
 
 #### `npm run start:dev`
+
 Starts the application in development using nodemon and ts-node to do cold reloading.
 
 #### `npm run build`
+
 Builds the app at build, cleaning the folder first.
 
 #### `npm run start`
 
 Starts the app in production by first building the project with npm run build,
 and then executing the compiled JavaScript at build/index.js
+
+### `For local development:`
+
+- using `npm pack`:
+  > ~/package-name $ `npm run build` <br>
+  > ~/package-name $ `npm pack` <br>
+  > ~/package-name $ `cp darius-kiuberis/helper-0.0.0.tgz ~` <br>
+  > ~/workspace/some-application $ `npm install ~/darius-kiuberis/helper-0.0.0.tgz`
+- using `yalc` (npm i yalc):
+  - add: <br>
+    > ~/package-name $ `npm run dev` <br>
+    > ~/some-application $ `yalc add @darius-kiuberis/helper`<br>
+  - update: <br>
+    > ~/package-name $ `npm run dev` <br>
+    > ~/some-application $ `yalc update @darius-kiuberis/helper`<br>
+    > ~/some-application $ `CTRL + C && npm start`<br>
+  - remove: <br>
+    > ~/some-application $ `npm uninstal @darius-kiuberis/helper` <br>
+    > ~/some-application $ `yalc remove @darius-kiuberis/helper` <br>

@@ -52,7 +52,8 @@ and then executing the compiled JavaScript at build/index.js
   > ~/package-name $ `npm pack` <br>
   > ~/package-name $ `cp darius-kiuberis/helper-0.0.0.tgz ~` <br>
   > ~/workspace/some-application $ `npm install ~/darius-kiuberis/helper-0.0.0.tgz`
-- using `yalc` (npm i yalc):
+- using `yalc` (npm i yalc -g
+):
   - add: <br>
     > ~/package-name $ `npm run dev` <br>
     > ~/some-application $ `yalc add @darius-kiuberis/helper`<br>

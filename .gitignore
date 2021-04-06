@@ -8,6 +8,8 @@ jspm_packages/
 
 # testing
 /coverage
+.yalc
+yalc.lock
 
 # production
 /build

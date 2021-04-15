@@ -1,5 +1,9 @@
-import add from '@darius-kiuberis/helper'
+/* eslint-disable no-undef */
+/* eslint-disable no-console */
+import pkg from '@darius-kiuberis/helper'
+const { add, subtract } = pkg
 
-console.log('FROM example/node 1')
+console.log('FROM example/node =====')
 
-console.log(add(22, 33))
+console.log('add : ', add(1, 2))
+console.log('subtract : ', subtract(9, 30))

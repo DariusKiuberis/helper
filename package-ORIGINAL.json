@@ -3,8 +3,8 @@
   "version": "1.0.16",
   "description": "My helpers",
   "types": "lib",
-  "main": "./lib/index.js",
-
+  "main": "./lib/cjs/index.js",
+  "module": "lib/esm/index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/DariusKiuberis/helper.git"
@@ -14,10 +14,10 @@
   ],
   "scripts": {
     "clean": "rimraf lib",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "watch:build": "tsc --watch",
-    "watch:server": "nodemon './lib/index.js' --watch './lib'",
-    "start:dev": "cross-env npm-run-all  clean build --parallel watch:build watch:server --print-label",
+    "watch:server": "nodemon './lib/esm/index.js' --watch './lib'",
+    "start:dev": "cross-env NODE_ENV=development npm-run-all  clean build --parallel watch:build watch:server --print-label",
 
     "prod": "cross-env NODE_ENV=production npm-run-all clean build --print-label && yalc publish --files",
 

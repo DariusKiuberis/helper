@@ -1,16 +1,6 @@
-import add from './add'
+import { add } from './add/add'
+import { subtract } from './subtract'
 
-console.log('index version 51')
+console.log('index version 61', add(2, 4), subtract(5, 3))
 
-export default add
-
-// /* eslint-disable no-console */
-// /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-// const add = (a: number, b: number) => {
-//   console.log('version 43')
-//   return a + b
-// }
-
-// console.log(add(2, 5))
-
-// export default add
+export { add, subtract }

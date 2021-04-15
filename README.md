@@ -55,10 +55,10 @@ and then executing the compiled JavaScript at build/index.js
 - using `yalc` (npm i yalc -g
 ):
   - add: <br>
-    > ~/package-name $ `npm run dev` <br>
+    > ~/package-name $ `npm run prod` <br>
     > ~/some-application $ `yalc add @darius-kiuberis/helper`<br>
   - update: <br>
-    > ~/package-name $ `npm run dev` <br>
+    > ~/package-name $ `npm run prod` <br>
     > ~/some-application $ `yalc update @darius-kiuberis/helper`<br>
     > ~/some-application $ `CTRL + C && npm start`<br>
   - remove: <br>

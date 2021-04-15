@@ -1,6 +1,18 @@
 import { add } from './add/add'
+import { log } from './log/log'
 import { subtract } from './subtract'
 
-console.log('index version 61', add(2, 4), subtract(5, 3))
+// log(
+//   {
+//     config: {
+//       color: 'red'
+//     }
+//   },
+//   'lalalal',
+//   333,
+//   'eee'
+// )
 
-export { add, subtract }
+// log()
+
+export { add, log, subtract }

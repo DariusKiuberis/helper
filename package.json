@@ -20,7 +20,7 @@
     "start:dev": "cross-env NODE_ENV=development npm-run-all clean build --parallel watch:build watch:server --print-label",
     "start:prod": "cross-env NODE_ENV=production npm-run-all clean build --parallel watch:build watch:server --print-label",
 
-    "prod":      "cross-env NODE_ENV=production  npm-run-all clean build --print-label && yalc publish --files",
+    "prod": "cross-env NODE_ENV=production  npm-run-all clean build --print-label && yalc publish --files",
     "darius": "nodemon",
 
 

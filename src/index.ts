@@ -1,18 +1,7 @@
-import { add } from './add/add'
-import { log } from './log/log'
-import { subtract } from './subtract'
+import { add } from './modules/add/add'
+import { log } from './modules/log/log'
+import { subtract } from './modules/subtract'
 
-// log(
-//   {
-//     config: {
-//       color: 'red'
-//     }
-//   },
-//   'lalalal',
-//   333,
-//   'eee'
-// )
-
-// log()
+// add(3, 3)
 
 export { add, log, subtract }

@@ -8,10 +8,9 @@ const nodejs = (config: any, rest: Array<unknown>): unknown => {
 
   // log({logConfig: {}}) with "logConfig"
   if (configExist) {
-    const buildLog = handleConfig(config)
-
     return _.forEach(rest, (value, key) => {
-      console.log(buildLog, `${key} :`, value)
+      const buildLog = handleConfig(config, value, key)
+      return buildLog
     })
   }
 
@@ -31,17 +30,3 @@ const nodejs = (config: any, rest: Array<unknown>): unknown => {
 }
 
 export default nodejs
-
-// export const log = (config: unknown, ...rest: Array<unknown>) => {
-//   const result = rest.map((item) => {
-//     if (_.isPlainObject(item) || _.isArray(item)) {
-//       return JSON.stringify(item, null, 3)
-//     }
-//     // if (_.isArray(item)) {
-//     //   return JSON.stringify(item)
-//     // }
-//     return item
-//   })
-
-//   return console.log(result.join(',\n '))
-// }

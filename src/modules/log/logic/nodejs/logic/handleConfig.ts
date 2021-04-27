@@ -1,28 +1,73 @@
+/* eslint-disable no-console */
 import _ from 'lodash'
 import colors from '../../../../../utils/styles/node/colors'
+import generateRandomNumber from '../../generateRandomNumber'
+import logObjects from './logObjects'
 
-const red = '\x1b[41m'
 const reset = '\x1b[0m'
-const bold = '\x1b[1m'
-const Underscore = '\x1b[4m'
 
-const handleConfig = (config: any) => {
-  let bgColor = ''
-  // iterate through config
-  _.forIn(config, (item, i) => {
-    if (item.bg) {
-      const col = item.bg
+const handleConfig = (config: any, value: any, key: number) => {
+  let bgColor = '\x1b[45m'
+  let textColor = '\x1b[37m'
+  let underscore = ''
+  let bold = ''
+  let blink = ''
+  let keyNumber = ''
+  let indent = 3
 
-      // match color defined in logConfig
+  _.forIn(config, (item) => {
+    if (item.bgColor) {
       _.forIn(colors, (value, key) => {
-        if (col === key) {
-          return (bgColor = value)
+        if (key === 'bg') {
+          _.forIn(value, (v, k) => {
+            if (item.bgColor === k) {
+              return (bgColor = v)
+            }
+          })
         }
       })
     }
+
+    if (item.textColor) {
+      _.forIn(colors, (value, key) => {
+        if (key === 'fg') {
+          _.forIn(value, (v, k) => {
+            if (item.textColor === k) {
+              return (textColor = v)
+            }
+          })
+        }
+      })
+    }
+
+    if (item.underscore) {
+      underscore = '\x1b[4m'
+    }
+    if (item.bold) {
+      bold = '\x1b[1m'
+    }
+
+    if (item.blink) {
+      blink = '\x1b[5m'
+    }
+    if (item.numbers && !item.numbersRandom) {
+      const addOne = key + 1
+      keyNumber = addOne.toString()
+    }
+    if (item.numbersRandom) {
+      keyNumber = generateRandomNumber().toString()
+    }
+
+    if (item.indent) {
+      indent = item.indent
+    }
   })
-  //   console.log(`${bgColor}${bold}%s${reset}`, `${key} :`, value)
-  return `${bgColor}${bold}%s${reset}`
+
+  return console.log(
+    `${bgColor}${textColor}${bold}${underscore}${blink}%s${reset}`,
+    ` ${keyNumber} `,
+    logObjects(value, indent)
+  )
 }
 
 export default handleConfig

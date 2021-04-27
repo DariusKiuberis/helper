@@ -33,7 +33,7 @@ export const log = (config?: unknown, ...rest: Array<unknown>): unknown => {
   return undefined
 }
 
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // log(55)
 
@@ -43,13 +43,27 @@ export const log = (config?: unknown, ...rest: Array<unknown>): unknown => {
 log(
   {
     logConfig: {
-      bg: 'bgBlue',
-      color: 'white',
-      bold: true
+      bgColor: 'red',
+      textColor: 'green',
+      // underscore: true,
+      bold: true,
+      blink: true,
+      numbers: true
+      // numbersRandom: true,
+      // indent: 9
     }
   },
   [1, 2, 3, [[{ mama: 22 }]], { lsll: 111 }],
+  { obj: 777777 },
   'eee',
   true,
-  { obj: 33 }
+  {
+    obj: {
+      nest1: {
+        nest2: {
+          nest3: 'lalala'
+        }
+      }
+    }
+  }
 )

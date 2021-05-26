@@ -8,48 +8,63 @@
 ### `Examples:`
 
 #### `log(any)`
-### Features: detects enviroment, logs only if "development".
 
-- log(oneValue)
+- DESCRIPTION: `detects enviroment, logs only if "development".`
+
+- EXAMPLE: `log(oneValue)`
   > logs like console.log(oneValue)
-- log(anything, this, and, this)<br>
+- EXAMPLE: `log(anything, this, and, this)`<br>
   > on every log adds number.
-- log( { logConfig {bold: true} }, value1, value2, value3, and, etc )
-  > can customise logs by passing `logConfig` object. <br>
-    here is available API:
+- EXAMPLE: `log( { logConfig: {bold: true} }, value1, value2, value3, and, etc )`
 
-  | property      | value                            | default  | browser | node  | description                   | DONE?  |
-  | ------------- | -------------------------------- | -------- | ------- | ----- | ----------------------------- | ------ |
-  | production    | true                             | false    | yes     | yes   | logs in production enviroment | no/no  |
-  | indent        | 4                                | 3        | no      | yes   | indentation for objects (1-10)| -/yes  |
-  | bold          | true                             | false    | yes     | yes   | bold text                     | no/yes |
-  | blink         | true                             | false    | yes     | yes   | text is blinking              | no/no  |
-  | bright        | true                             | false    | yes     | yes   | text is bright                | no/no  |
-  | bgColor       | 'black', 'blue', 'green', 'pink' | 'purple' | yes     | yes   | background color              | no/yes |
-  |               | 'red', 'yellow', 'aqua', white'  |          | yes     | yes   |                               |        |
-  | bgRandom      | true                             | false    | yes     | yes   | random background color       | no/no  |
-  | dim           | true                             | false    | yes     | yes   | text is dimmed                | no/no  |
-  | textColor     | 'black', 'blue', 'green', 'pink' | 'white'  | yes     | yes   | text color                    | no/yes |
-  |               | 'red', 'yellow', 'aqua', white'  |          | yes     | yes   |                               |        |
-  | underscore    | true                             | false    | yes     | yes   | list number underscore        | no/yes |
-  | numbers       | true                             | false    | yes     | yes   | list number                   | no/yes |
-  | numbersRandom | true                             | false    | yes     | yes   | random list number (1-999)    | no/yes |
+  > can customise logs by passing `logConfig` object. <br>
+  > here is available API:
+
+  | property      | value                            | default  | browser | node | description                    | ready  |
+  | ------------- | -------------------------------- | -------- | ------- | ---- | ------------------------------ | ------ |
+  | production    | true                             | false    | yes     | yes  | logs in production enviroment  | no/no  |
+  | indent        | 4                                | 3        | no      | yes  | indentation for objects (1-10) | -/yes  |
+  | bold          | true                             | false    | yes     | yes  | bold text                      | no/yes |
+  | blink         | true                             | false    | yes     | yes  | text is blinking               | no/no  |
+  | bright        | true                             | false    | yes     | yes  | text is bright                 | no/no  |
+  | bgColor       | 'black', 'blue', 'green', 'pink' | 'purple' | yes     | yes  | background color               | no/yes |
+  |               | 'red', 'yellow', 'aqua', white'  |          |         |      |                                |        |
+  | bgRandom      | true                             | false    | yes     | yes  | random background color        | no/no  |
+  | dim           | true                             | false    | yes     | yes  | text is dimmed                 | no/no  |
+  | textColor     | 'black', 'blue', 'green', 'pink' | 'white'  | yes     | yes  | text color                     | no/yes |
+  |               | 'red', 'yellow', 'aqua', white'  |          |         |      |                                |        |
+  | underscore    | true                             | false    | yes     | yes  | list number underscore         | no/yes |
+  | numbers       | true                             | false    | yes     | yes  | list number                    | no/yes |
+  | numbersRandom | true                             | false    | yes     | yes  | random list number (1-999)     | no/yes |
+  |               |                                  |          |         |      |                                |        |
 
 #### `random(type, val1, val2)`
 
-- random('number', 30 , 200)<br>
-  > returns random number between 30 and 200. Default from 1 to 99.
-- random('string', 11)<br>
+- DESCRIPTION: `returns random characters`
+- EXAMPLE: `random({type: "char", length: 55, inlude: {special: true}})`<br>
 
-  > returns random string text 11 characters long. Default 5.
+  > can customise random by passing `{}` object. <br>
+  > here is available API:
 
-- random('array', 8 , 5)<br>
-  > returns 8 arrays with 5 nested arrays inside and random elements. Default 3 arrays with 3 nested.
+  | type     | options            | suboptions         | default | description                                  | ready |
+  | -------- | ------------------ | ------------------ | ------- | -------------------------------------------- | ----- |
+  | "char"   | length: _number_   |                    | 9       | creates random characters (string)           | no    |
+  |          | upper: _boolean_   |                    | false   |                                              | no    |
+  |          | include: _object_  | number: _boolean_  | false   |                                              | no    |
+  |          |                    | special: _boolean_ | false   |                                              | no    |
+  | "number" | length: _number_   |                    | 3       | how long is number (if length: 4; then XXXX) | no    |
+  |          | min: _number_      |                    | 0       |                                              | no    |
+  |          | max: _number_      |                    | 99      |                                              | no    |
+  |          | decimal: _boolean_ |                    | false   |                                              | no    |
+  |          |                    |                    |         |                                              | no    |
+  |          |                    |                    |         |                                              | no    |
+
+[TOC]
 
 #### `type(any)`
 
-- type(any-value)<br>
-  > returns correct type of passed variable.
+- **EXAMPLE**: type(any-value)<br>
+  > _returns correct type of passed variable._
 
 ---
 
@@ -76,6 +91,7 @@ and then executing the compiled JavaScript at build/index.js
 ### `For local development:`
 
 - using `npm pack`:
+
   > ~/package-name $ `npm run build` <br>
   > ~/package-name $ `npm pack` <br>
   > ~/package-name $ `cp darius-kiuberis/helper-0.0.0.tgz ~` <br>

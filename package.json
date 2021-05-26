@@ -16,14 +16,10 @@
     "build": "tsc -p tsconfig.json  ",
     "watch:build": "tsc --watch",
     "watch:server": "nodemon './lib/index.js' --watch './lib'",
-
     "start:dev": "cross-env NODE_ENV=development npm-run-all clean build --parallel watch:build watch:server --print-label",
     "start:prod": "cross-env NODE_ENV=production npm-run-all clean build --parallel watch:build watch:server --print-label",
-
     "prod": "cross-env NODE_ENV=production  npm-run-all clean build --print-label && yalc publish --files",
     "darius": "nodemon",
-
-
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "prettier:format": "prettier --config .prettierrc 'src/**/*.ts' --write",

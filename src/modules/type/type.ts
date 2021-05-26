@@ -3,6 +3,6 @@
  *
  * @param {*} prop {any} - prop
  */
-export const type = (prop: any) => {
+export const type = (prop: unknown): unknown => {
   return Object.prototype.toString.call(prop).slice(8, -1).toLowerCase()
 }

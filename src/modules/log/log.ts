@@ -40,30 +40,30 @@ export const log = (config?: unknown, ...rest: Array<unknown>): unknown => {
 // log('only one param')
 // log('first param', 'second param')
 
-log(
-  {
-    logConfig: {
-      bgColor: 'red',
-      textColor: 'green',
-      // underscore: true,
-      bold: true,
-      blink: true,
-      numbers: true
-      // numbersRandom: true,
-      // indent: 9
-    }
-  },
-  [1, 2, 3, [[{ mama: 22 }]], { lsll: 111 }],
-  { obj: 777777 },
-  'eee',
-  true,
-  {
-    obj: {
-      nest1: {
-        nest2: {
-          nest3: 'lalala'
-        }
-      }
-    }
-  }
-)
+// log(
+//   {
+//     logConfig: {
+//       bgColor: 'red',
+//       textColor: 'green',
+//       // underscore: true,
+//       bold: true,
+//       blink: true,
+//       numbers: true
+//       // numbersRandom: true,
+//       // indent: 9
+//     }
+//   },
+//   [1, 2, 3, [[{ mama: 22 }]], { lsll: 111 }],
+//   { obj: 777777 },
+//   'eee',
+//   true,
+//   {
+//     obj: {
+//       nest1: {
+//         nest2: {
+//           nest3: 'lalala111'
+//         }
+//       }
+//     }
+//   }
+// )
